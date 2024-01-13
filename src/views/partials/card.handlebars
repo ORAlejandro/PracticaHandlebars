@@ -1,0 +1,11 @@
+{{#each arrayProductos}}
+<div>
+    <h2>Titulo: {{this.nombre}}</h2>
+    <p>Descripcion: {{this.descripcion}}</p>
+    <p>Precio: {{this.precio}}</p>
+    <img src="https://placekitten.com/408/287" alt="Produgato">
+    <button> Comprar </button>
+</div>
+{{/each}}
+
+{{!-- Para levantar un partial en otro archivo .handlebars hay que usar la sintaxis: "{{>nombreDelPartial}}"--}}

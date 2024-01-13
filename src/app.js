@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const PUERTO = 8080;
+const viewsRouter = require("./routes/views.router.js");
 
 //Importar handlebars
 const exphbs = require("express-handlebars");
@@ -15,10 +16,9 @@ app.set("views", "./src/views");
 //Esta cfg esta en la documentacion de handlebars en la web de npm
 //https://www.npmjs.com/package/handlebars
 
-app.get("/", (req, res) => {
-    res.render("index");
-})
+app.use(express.static("./src/public"));
+app.use("/", viewsRouter);
 
-app.listen(PUERTO, (req, res) => {
+app.listen(PUERTO, () => {
     console.log(`Escuchando en el puerto http://localhost:${PUERTO}`);
 })

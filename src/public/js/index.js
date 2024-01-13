@@ -1,0 +1,1 @@
+console.log("Mensaje desde public/js/index con exito!")
